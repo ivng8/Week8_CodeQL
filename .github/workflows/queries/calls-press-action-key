@@ -1,0 +1,20 @@
+/**
+ * @description Find all functions calling getActionKey
+ * @id javascript/calls-press-action-key
+ */
+import javascript
+
+predicate callsGetActionKey(FunctionLike func) {
+    exists(CallExpression call |
+        call.getCallee().getQualifiedName() = "getActionKey" and
+        call.getEnclosingFunction() = func
+    )
+}
+
+// Select functions that call getActionKey and output their name if available
+from FunctionLike func
+where callsGetActionKey(func)
+select func, 
+  (func instanceof NamedFunction ? 
+      "Function '" + func.getName() + "' calls getActionKey." :
+      "Anonymous function calls getActionKey.")
