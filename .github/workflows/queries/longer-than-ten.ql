@@ -4,10 +4,10 @@
  */
 import javascript
 
-predicate isLongFunction(FunctionLike func) {
+predicate isLongFunction(Function func) {
     func.getNumLines() > 10
 }
 
-from FunctionLike func
+from Function func
 where isLongFunction(func)
 select func, "Function " + func.getName() + " has " + func.getNumLines() + " lines."
