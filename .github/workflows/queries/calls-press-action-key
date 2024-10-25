@@ -4,15 +4,14 @@
  */
 import javascript
 
-predicate callsGetActionKey(FunctionLike func) {
+predicate callsGetActionKey(Function func) {
     exists(CallExpression call |
         call.getCallee().getQualifiedName() = "getActionKey" and
         call.getEnclosingFunction() = func
     )
 }
 
-// Select functions that call getActionKey and output their name if available
-from FunctionLike func
+from Function func
 where callsGetActionKey(func)
 select func, 
   (func instanceof NamedFunction ? 
