@@ -1,6 +1,8 @@
 /**
  * @description Find all functions longer than 10 lines
+ * @kind problem
  * @id javascript/longer-than-ten
+ * @problem.severity recommendation
  */
 import javascript
 
