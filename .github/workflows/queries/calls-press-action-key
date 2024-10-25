@@ -13,7 +13,4 @@ predicate callsGetActionKey(Function func) {
 
 from Function func
 where callsGetActionKey(func)
-select func, 
-  (func instanceof NamedFunction ? 
-      "Function '" + func.getName() + "' calls getActionKey." :
-      "Anonymous function calls getActionKey.")
+"Function '" + func.getName() + "' calls getActionKey."
