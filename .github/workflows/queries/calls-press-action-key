@@ -7,10 +7,9 @@ import javascript
 predicate callsGetActionKey(Function func) {
     exists(CallExpression call |
         call.getCallee().getQualifiedName() = "getActionKey" and
-        call.getEnclosingFunction() = func
-    )
+        call.getEnclosingFunction() = func)
 }
 
 from Function func
 where callsGetActionKey(func)
-"Function '" + func.getName() + "' calls getActionKey."
+"Function " + func.getName() + " calls getActionKey."
