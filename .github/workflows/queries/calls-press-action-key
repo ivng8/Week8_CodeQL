@@ -1,6 +1,8 @@
 /**
  * @description Find all functions calling getActionKey
+ * @kind problem
  * @id javascript/calls-press-action-key
+ * @problem.severity recommendation
  */
 import javascript
 
